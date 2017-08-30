@@ -1,3 +1,5 @@
+console.log('ready');
+
 window.addEventListener("message", function (event) {
     console.log('message', event);
     if (event.data &&
