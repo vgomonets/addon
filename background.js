@@ -1,9 +1,5 @@
-console.log('ready');
-
-window.addEventListener("message", function (event) {
-    console.log('message', event);
-    if (event.data &&
-        event.data.direction == "open-my-page" && event.data.message == 'open-tab') {
-        browser.tabs.create();
-    }
-});
+browser.runtime.onMessage.addListener(function (event) {
+    browser.tabs.create({
+      url:"https://example.org"
+    });
+})
